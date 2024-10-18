@@ -15,14 +15,19 @@ class OptionsState extends MusicBeatState
 		switch(label) {
 			case 'Note Colors':
 				openSubState(new options.NotesSubState());
+				removeVirtualPad();
 			case 'Controls':
 				openSubState(new options.ControlsSubState());
+				removeVirtualPad();
 			case 'Graphics':
 				openSubState(new options.GraphicsSettingsSubState());
+				removeVirtualPad();
 			case 'Visuals and UI':
 				openSubState(new options.VisualsUISubState());
+				removeVirtualPad();
 			case 'Gameplay':
 				openSubState(new options.GameplaySettingsSubState());
+				removeVirtualPad();
 			case 'Adjust Delay and Combo':
 				MusicBeatState.switchState(new options.NoteOffsetState());
 		}
@@ -63,12 +68,20 @@ class OptionsState extends MusicBeatState
 		changeSelection();
 		ClientPrefs.saveSettings();
 
+		#if mobile
+                addVirtualPad(UP_DOWN, A_B_X_Y);
+                #end
+		
 		super.create();
 	}
 
 	override function closeSubState() {
 		super.closeSubState();
 		ClientPrefs.saveSettings();
+		#if mobile
+                removeVirtualPad();
+		addVirtualPad(UP_DOWN, A_B_X_Y);
+                #end
 		#if DISCORD_ALLOWED
 		DiscordClient.changePresence("Options Menu", null);
 		#end
@@ -84,6 +97,18 @@ class OptionsState extends MusicBeatState
 			changeSelection(1);
 		}
 
+		#if mobile
+	 if (MusicBeatState.virtualPad.buttonX.justPressed)
+		{
+			removeVirtualPad();
+			openSubState(new mobile.MobileControlsSubState());
+		}
+		if (MusicBeatState.virtualPad.buttonY.justPressed) {
+			removeVirtualPad();
+			openSubState(new mobile.AndroidSettingsSubState());
+		}
+	#end
+		
 		if (controls.BACK) {
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			if(onPlayState)
