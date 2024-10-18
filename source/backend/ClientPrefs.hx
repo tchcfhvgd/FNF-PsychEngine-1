@@ -8,6 +8,11 @@ import states.TitleState;
 
 // Add a variable here and it will get automatically saved
 @:structInit class SaveVariables {
+	public var padalpha:Float = 0.6;
+	public var hitboxalpha:Float = 0.5;
+	public var mobileCEx:Bool = false;
+	public var hitboxType:String = "Gradient";
+	public var hitboxPos:Bool = true;
 	public var downScroll:Bool = false;
 	public var middleScroll:Bool = false;
 	public var opponentStrums:Bool = true;
