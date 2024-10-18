@@ -48,8 +48,6 @@ class NotesSubState extends MusicBeatSubstate
 	var tipTxt:FlxText;
 
 	public function new() {
-                controls.isInSubstate = true;
-
 		super();
 		
 		#if DISCORD_ALLOWED
@@ -94,13 +92,8 @@ class NotesSubState extends MusicBeatSubstate
 		var sigh:String;
 		var sighPosX:Int;
 
-		if (controls.mobileC) {
-			sigh = "PRESS";
-			sighPosX = 44;
-		} else {
-			sigh = "CTRL";
-			sighPosX = 50;
-		}
+		sigh = "PRESS";
+		sighPosX = 44;
 
 		var text:Alphabet = new Alphabet(sighPosX, 86, sigh, false);
 		text.alignment = CENTERED;
@@ -161,12 +154,8 @@ class NotesSubState extends MusicBeatSubstate
 		var tipY = 660;
 		var tipText:String;
 
-		if (controls.mobileC) {
-			tipText = "Press C to Reset the selected Note Part.";
-			tipY = 0;
-		} else {
-			tipText = "Press RELOAD to Reset the selected Note Part.";
-		}
+		tipText = "Press C to Reset the selected Note Part.";
+		tipY = 0;
 
 		var tip:FlxText = new FlxText(tipX, tipY, 0, tipText, 16);
 		tip.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -189,19 +178,16 @@ class NotesSubState extends MusicBeatSubstate
 		controllerPointer.visible = controls.controllerMode;
 		_lastControllerMode = controls.controllerMode;
 
-        addVirtualPad(NONE, B_C);
-                virtualPad.buttonB.x = FlxG.width - 132;
-		virtualPad.buttonC.x = 0;
-		virtualPad.buttonC.y = FlxG.height - 135;
+                addVirtualPad(NONE, A_B_C);
+                MusicBeatSubstate.virtualPad.buttonB.x = FlxG.width - 132;
+		MusicBeatSubstate.virtualPad.buttonC.x = 0;
+		MusicBeatSubstate.virtualPad.buttonA.y = -200;
+		MusicBeatSubstate.virtualPad.buttonC.y = FlxG.height - 135;
 	}
 
 	function updateTip()
 	{
-		if (controls.mobileC) {
 		// do sex
-		} else {
-		tipTxt.text = 'Hold ' + (!controls.controllerMode ? 'Shift' : 'Left Shoulder Button') + ' + Press RESET key to fully reset the selected Note.';
-                }
 	}
 
 	var _storedColor:FlxColor;
@@ -217,7 +203,6 @@ class NotesSubState extends MusicBeatSubstate
 			FlxG.mouse.visible = false;
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			ClientPrefs.saveSettings();
-                        controls.isInSubstate = false;
 			close();
 			return;
 		}
@@ -499,7 +484,7 @@ class NotesSubState extends MusicBeatSubstate
 				}
 			} 
 		}
-		else if(virtualPad.buttonC.justPressed || controls.RESET && hexTypeNum < 0)
+		else if(MusicBeatSubstate.virtualPad.buttonC.justPressed || controls.RESET && hexTypeNum < 0)
 		{
 			if(FlxG.keys.pressed.SHIFT || FlxG.gamepads.anyJustPressed(LEFT_SHOULDER))
 			{
