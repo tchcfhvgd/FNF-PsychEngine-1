@@ -103,6 +103,11 @@ class BaseOptionsMenu extends MusicBeatSubstate
 
 		changeSelection();
 		reloadCheckboxes();
+
+		#if mobile
+                addVirtualPad(LEFT_RIGHT, A_B_C);
+                addVirtualPadCamera(false);
+                #end
 	}
 
 	public function addOption(option:Option) {
@@ -259,7 +264,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET || MusicBeatSubstate.virtualPad.buttonC.justPressed)
 			{
 				var leOption:Option = optionsArray[curSelected];
 				if(leOption.type != 'keybind')
