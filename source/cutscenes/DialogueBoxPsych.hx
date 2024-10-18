@@ -53,6 +53,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 	{
 		super();
 
+		Controls.CheckPress = false;
 		//precache sounds
 		Paths.sound('dialogue');
 		Paths.sound('dialogueClose');
