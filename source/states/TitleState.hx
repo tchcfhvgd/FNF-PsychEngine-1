@@ -70,6 +70,7 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
+		noCheckPress();
 		Paths.clearStoredMemory();
 
 		#if LUA_ALLOWED
