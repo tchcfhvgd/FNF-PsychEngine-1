@@ -22,13 +22,15 @@ class MusicBeatState extends FlxUIState
 
 	private var curDecStep:Float = 0;
 	private var curDecBeat:Float = 0;
+	public static var checkHitbox:Bool = false;
+	public static var checkDUO:Bool = false;
 	public var controls(get, never):Controls;
 	private function get_controls()
 	{
 		return Controls.instance;
 	}
 
-               #if mobile
+                #if mobile
 		public static var mobileControls:MobileControls;
 		public static var virtualPad:FlxVirtualPad;
 		//var trackedInputsMobileControls:Array<FlxActionInput> = [];
