@@ -91,7 +91,6 @@ class MusicBeatState extends FlxUIState
 				case 'Keyboard':
 				checkHitbox = false;
 				checkDUO = false;
-				Controls.CheckPress = false;
 			        Controls.CheckKeyboard = true;
 			}
 
