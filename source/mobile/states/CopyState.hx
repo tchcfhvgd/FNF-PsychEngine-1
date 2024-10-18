@@ -12,6 +12,7 @@ import flixel.addons.util.FlxAsyncLoop;
 import openfl.utils.ByteArray;
 import haxe.io.Path;
 import mobile.backend.SUtil;
+import states.TitleState;
 #if (target.threaded)
 import sys.thread.Thread;
 #end
@@ -80,7 +81,7 @@ class CopyState extends MusicBeatState
 		}
 		else
 		{
-			MusicBeatState.switchState(new Init());
+			MusicBeatState.switchState(new TitleState());
 		}
 
 		super.create();
@@ -101,7 +102,7 @@ class CopyState extends MusicBeatState
 				}
 				canUpdate = false;
 				FlxG.sound.play(Paths.sound('confirmMenu')).onComplete = () -> {
-					MusicBeatState.switchState(new Init());
+					MusicBeatState.switchState(new TitleState());
 				};
 			}
 			if (maxLoopTimes == 0)
