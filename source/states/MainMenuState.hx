@@ -17,10 +17,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-		#if MODS_ALLOWED 'mods', #end
-		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
-		#if !switch 'donate', #end
 		'options'
 	];
 
@@ -44,17 +41,36 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
-		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+		var bg:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('whittyMenuBG'));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
-		bg.scrollFactor.set(0, yScroll);
-		bg.setGraphicSize(Std.int(bg.width * 1.175));
+		bg.scrollFactor.set(0, 0);
 		bg.updateHitbox();
 		bg.screenCenter();
 		add(bg);
 
+		var bg2:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('whittyMenuForeground'));
+		bg2.antialiasing = ClientPrefs.data.antialiasing;
+		bg2.scrollFactor.set(0, 0);
+		bg2.updateHitbox();
+		bg2.screenCenter();
+		add(bg2);
+
+		var bg3:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('whittyMenuSmokeLeft'));
+		bg3.antialiasing = ClientPrefs.data.antialiasing;
+		bg3.scrollFactor.set(0, 0);
+		bg3.updateHitbox();
+		bg3.screenCenter();
+		add(bg3);
+
+		var bg4:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('whittyMenuSmokeRight'));
+		bg4.antialiasing = ClientPrefs.data.antialiasing;
+		bg4.scrollFactor.set(0, 0);
+		bg4.updateHitbox();
+		bg4.screenCenter();
+		add(bg4);
+
 		camFollow = new FlxObject(0, 0, 1, 1);
-		add(camFollow);
+		//add(camFollow);
 
 		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
 		magenta.antialiasing = ClientPrefs.data.antialiasing;
@@ -64,7 +80,7 @@ class MainMenuState extends MusicBeatState
 		magenta.screenCenter();
 		magenta.visible = false;
 		magenta.color = 0xFFfd719b;
-		add(magenta);
+		//add(magenta);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
@@ -84,7 +100,7 @@ class MainMenuState extends MusicBeatState
 				scr = 0;
 			menuItem.scrollFactor.set(0, scr);
 			menuItem.updateHitbox();
-			menuItem.screenCenter(X);
+			//menuItem.screenCenter(X);
 		}
 
 		var psychVer:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
@@ -114,7 +130,7 @@ class MainMenuState extends MusicBeatState
 			
 		super.create();
 
-		FlxG.camera.follow(camFollow, null, 9);
+		//FlxG.camera.follow(camFollow, null, 9);
 	}
 
 	var selectedSomethin:Bool = false;
@@ -221,7 +237,7 @@ class MainMenuState extends MusicBeatState
 		FlxG.sound.play(Paths.sound('scrollMenu'));
 		menuItems.members[curSelected].animation.play('idle');
 		menuItems.members[curSelected].updateHitbox();
-		menuItems.members[curSelected].screenCenter(X);
+		//menuItems.members[curSelected].screenCenter(X);
 
 		curSelected += huh;
 
@@ -232,7 +248,7 @@ class MainMenuState extends MusicBeatState
 
 		menuItems.members[curSelected].animation.play('selected');
 		menuItems.members[curSelected].centerOffsets();
-		menuItems.members[curSelected].screenCenter(X);
+		//menuItems.members[curSelected].screenCenter(X);
 
 		camFollow.setPosition(menuItems.members[curSelected].getGraphicMidpoint().x,
 			menuItems.members[curSelected].getGraphicMidpoint().y - (menuItems.length > 4 ? menuItems.length * 8 : 0));
