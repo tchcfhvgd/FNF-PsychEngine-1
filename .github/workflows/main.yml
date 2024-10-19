@@ -58,7 +58,7 @@ jobs:
           haxelib install flixel-ui
           haxelib install flixel-addons
           haxelib install tjson
-          haxelib install hxCodec 2.6.1
+          haxelib install hxvlc
           haxelib install hxjsonast
           haxelib install hscript
           haxelib git flxanimate https://github.com/beihu235/flxanimate
