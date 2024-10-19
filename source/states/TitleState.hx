@@ -214,7 +214,7 @@ class TitleState extends MusicBeatState
 		logoBl.scale.set(0.7,0.7);
 
 		logoBl.animation.addByPrefix('bump', 'LogoWhitty Bump', 24, false);
-		logoBl.animation.play('bump');
+		logoBl.animation.addByPrefix('start', 'LogoWhitty Spray', 24, false);
 		logoBl.updateHitbox();
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
@@ -535,7 +535,7 @@ class TitleState extends MusicBeatState
 		if(closedState)
 		{
 		if(logoBl != null)
-			logoBl.animation.play('bump', true);
+			logoBl.animation.play('bump');
 
 		if(gfDance != null)
 			gfDance.animation.play('idle');
@@ -545,7 +545,7 @@ class TitleState extends MusicBeatState
 		if(qqqeb && !closedState)
 		{
                      if(logoBl != null)
-			logoBl.animation.play('bump', true);
+			logoBl.animation.play('bump');
 
 		     if(gfDance != null)
 			gfDance.animation.play('idle');
@@ -605,14 +605,15 @@ class TitleState extends MusicBeatState
 					skipIntro();
 
 				case 18:
-					if(logoBl != null)
-			                logoBl.animation.play('bump', true);
-					
 					if(gfDance != null) {
 			                gfDance.animation.play('start', true);
 			                }
 
-				case 26:
+				case 24:
+					if(logoBl != null)
+			                logoBl.animation.play('start', true);
+				
+				case 27:
 				        qqqeb = true;
 	
 					
