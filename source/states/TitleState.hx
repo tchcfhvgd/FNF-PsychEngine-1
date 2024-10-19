@@ -253,8 +253,8 @@ class TitleState extends MusicBeatState
 				gfDance.animation.addByPrefix('idle', 'Whitty_Memu Idle', 24, false);
 		}
 
-		add(gfDance);
 		add(logoBl);
+		add(gfDance);
 		if(swagShader != null)
 		{
 			gfDance.shader = swagShader.shader;
