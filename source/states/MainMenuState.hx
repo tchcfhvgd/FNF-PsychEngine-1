@@ -203,6 +203,7 @@ class MainMenuState extends MusicBeatState
 						switch (optionShit[curSelected])
 						{
 							case 'story_mode':
+								PlayState.storyDifficulty = Difficulty.getDefault();
 								PlayState.storyPlaylist = ['lo-fight', 'overhead', 'ballistic'];
 		                                                PlayState.isStoryMode = true;
 								PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase(), PlayState.storyPlaylist[0].toLowerCase());
