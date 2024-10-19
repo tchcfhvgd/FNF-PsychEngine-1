@@ -41,6 +41,8 @@ class TitleState extends MusicBeatState
 
 	public static var initialized:Bool = false;
 
+	public static var qqqeb:Bool = false;
+
 	var blackScreen:FlxSprite;
 	var credGroup:FlxGroup;
 	var credTextShit:Alphabet;
@@ -535,9 +537,19 @@ class TitleState extends MusicBeatState
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
 
-		if(gfDance != null) {
-			gfDance.animation.play('idle', true);
+		if(gfDance != null)
+			gfDance.animation.play('idle');
+			
 		}
+
+		if(qqqeb && !closedState)
+		{
+                     if(logoBl != null)
+			logoBl.animation.play('bump', true);
+
+		     if(gfDance != null)
+			gfDance.animation.play('idle');
+					
 		}
 
 
@@ -600,13 +612,9 @@ class TitleState extends MusicBeatState
 			                gfDance.animation.play('start', true);
 			                }
 
-				case 24:
-					if(logoBl != null)
-			                logoBl.animation.play('bump', false);
-					
-					if(gfDance != null) {
-			gfDance.animation.play('idle', false);
-					}
+				case 26:
+				        qqqeb = true;
+	
 					
 
 			}
