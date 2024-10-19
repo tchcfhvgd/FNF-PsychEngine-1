@@ -208,7 +208,7 @@ class MainMenuState extends MusicBeatState
 								PlayState.storyWeek = 0;
 		                                                PlayState.campaignScore = 0;
 		                                                PlayState.campaignMisses = 0
-								MusicBeatState.switchState(new PlayState());
+							        LoadingState.loadAndSwitchState(new PlayState(), true);
 							case 'freeplay':
 								MusicBeatState.switchState(new FreeplayState());
 
