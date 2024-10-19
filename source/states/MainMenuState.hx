@@ -203,10 +203,12 @@ class MainMenuState extends MusicBeatState
 						switch (optionShit[curSelected])
 						{
 							case 'story_mode':
-							        PlayState.storyDifficulty = 0;
+							        var diffic = Difficulty.getDifficultyFilePath(3);
+		                                                if(diffic == null) diffic = '';
+								PlayState.storyDifficulty = 3;
 								PlayState.storyPlaylist = ['lo-fight', 'overhead', 'ballistic'];
 		                                                PlayState.isStoryMode = true;
-								PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase(), PlayState.storyPlaylist[0].toLowerCase());
+								PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 								PlayState.storyWeek = 0;
 		                                                PlayState.campaignScore = 0;
 		                                                PlayState.campaignMisses = 0;
