@@ -247,8 +247,8 @@ class TitleState extends MusicBeatState
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 				gfDance.frames = Paths.getSparrowAtlas('whittyTitle');
-				gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-				gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				gfDance.animation.addByIndices('start', 'Whitty_Memu StartUp', 24, false);
+				gfDance.animation.addByIndices('idle', 'Whitty_Memu Idle', 24, false);
 		}
 
 		add(gfDance);
@@ -530,16 +530,16 @@ class TitleState extends MusicBeatState
 	{
 		super.beatHit();
 
+		if(!closedState) {
+		{
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
 
 		if(gfDance != null) {
-			danceLeft = !danceLeft;
-			if (danceLeft)
-				gfDance.animation.play('danceRight');
-			else
-				gfDance.animation.play('danceLeft');
+			gfDance.animation.play('idle', true);
 		}
+		}
+
 
 		if(!closedState) {
 			sickBeats++;
@@ -591,6 +591,16 @@ class TitleState extends MusicBeatState
 
 				case 17:
 					skipIntro();
+
+				case 18:
+					if(logoBl != null)
+			                logoBl.animation.play('bump', true);
+					
+					if(gfDance != null) {
+			                gfDance.animation.play('start', true);
+			}
+					
+
 			}
 		}
 	}
