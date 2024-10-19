@@ -116,7 +116,7 @@ class MainMenuState extends MusicBeatState
 			if(optionShit[i] == 'credits')
 			{
 				menuItem.y -= 130;
-				menuItem.x += 130;
+				menuItem.x += 180;
 				menuItem.angle = 10;
 			}
 			if(optionShit[i] == 'options')
