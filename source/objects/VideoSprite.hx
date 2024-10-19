@@ -24,6 +24,8 @@ class VideoSprite extends FlxSpriteGroup {
 	public var didPlay:Bool = false;
 
 	public function new(videoName:String, isWaiting:Bool, canSkip:Bool = false, shouldLoop:Dynamic = false) {
+		Controls.CheckPress = false;
+		
 		super();
 
 		this.videoName = videoName;
