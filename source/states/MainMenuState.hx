@@ -105,21 +105,25 @@ class MainMenuState extends MusicBeatState
 			{
 				menuItem.y -= 130;
 				menuItem.x -= 0;
+				menuItem.angle = 1;
 			}
 			if(optionShit[i] == 'freeplay')
 			{
 				menuItem.y -= 100;
 				menuItem.x -= 0;
+				menuItem.angle = -2;
 			}
 			if(optionShit[i] == 'credits')
 			{
 				menuItem.y -= 80;
 				menuItem.x -= 0;
+				menuItem.angle = 2;
 			}
 			if(optionShit[i] == 'options')
 			{
 				menuItem.y -= 60;
 				menuItem.x -= 0;
+				menuItem.angle = -4;
 			}
 		}
 
