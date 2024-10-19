@@ -103,22 +103,22 @@ class MainMenuState extends MusicBeatState
 			//menuItem.screenCenter(X);
 			if(optionShit[i] == 'story_mode')
 			{
-				menuItem.y -= 100;
+				menuItem.y -= 130;
 				menuItem.x -= 0;
 			}
 			if(optionShit[i] == 'freeplay')
 			{
-				menuItem.y -= 80;
+				menuItem.y -= 100;
 				menuItem.x -= 0;
 			}
 			if(optionShit[i] == 'credits')
 			{
-				menuItem.y -= 60;
+				menuItem.y -= 80;
 				menuItem.x -= 0;
 			}
 			if(optionShit[i] == 'options')
 			{
-				menuItem.y -= 40;
+				menuItem.y -= 60;
 				menuItem.x -= 0;
 			}
 		}
