@@ -1,0 +1,8 @@
+Camera Zoom on certain Beats!
+
+Value 1: Amount of Beat Zooms per Section.
+Value 2: Zoom Intensity
+
+NOTE: This Event was inspired by another script.
+Original Script by: TehPuertoRicanSpartan
+This one is simplified for 0.7.1h.
