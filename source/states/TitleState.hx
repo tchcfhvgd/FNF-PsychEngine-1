@@ -601,6 +601,9 @@ class TitleState extends MusicBeatState
 			                }
 
 				case 24:
+					if(logoBl != null)
+			                logoBl.animation.play('bump', false);
+					
 					if(gfDance != null) {
 			gfDance.animation.play('idle', false);
 					}
