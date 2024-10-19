@@ -1,0 +1,9 @@
+{
+	"name": "Whitty-ERECT",
+	"description": "VS Whitty Mod, now with an Erect twist!",
+	"restart":true,
+	"runsGlobally": false,
+	"color": [170, 0, 255],
+	"discordRPC": "863222024192262205",
+	"iconFramerate": 10
+}
