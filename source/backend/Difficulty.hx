@@ -6,10 +6,10 @@ class Difficulty
 		'Easy',
 		'erect',
 		'Hard',
-		'erect'
+		’Normal’
 	];
 	public static var list:Array<String> = [];
-	private static var defaultDifficulty(default, never):String = 'erect'; //The chart that has no suffix and starting difficulty on Freeplay/Story Mode
+	private static var defaultDifficulty(default, never):String = 'Normal'; //The chart that has no suffix and starting difficulty on Freeplay/Story Mode
 
 	inline public static function getFilePath(num:Null<Int> = null)
 	{
