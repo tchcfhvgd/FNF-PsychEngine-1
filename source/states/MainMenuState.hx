@@ -123,7 +123,7 @@ class MainMenuState extends MusicBeatState
 			{
 				menuItem.y -= 100;
 				menuItem.x -= 0;
-				menuItem.angle = 8;
+				menuItem.angle = -10;
 			}
 		}
 
