@@ -598,7 +598,12 @@ class TitleState extends MusicBeatState
 					
 					if(gfDance != null) {
 			                gfDance.animation.play('start', true);
-			}
+			                }
+
+				case 24:
+					if(gfDance != null) {
+			gfDance.animation.play('idle', false);
+					}
 					
 
 			}
