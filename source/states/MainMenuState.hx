@@ -204,9 +204,9 @@ class MainMenuState extends MusicBeatState
 						{
 							case 'story_mode':
 							        Difficulty.resetList();
-								var diffic = Difficulty.getFilePath(3);
+								var diffic = Difficulty.getFilePath(1);
 		                                                if(diffic == null) diffic = '';
-								PlayState.storyDifficulty = 3;
+								PlayState.storyDifficulty = 1;
 								PlayState.storyPlaylist = ['lo-fight', 'overhead', 'ballistic'];
 		                                                PlayState.isStoryMode = true;
 								PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
