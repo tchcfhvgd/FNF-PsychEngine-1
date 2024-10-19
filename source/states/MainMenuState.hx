@@ -88,7 +88,7 @@ class MainMenuState extends MusicBeatState
 		for (i in 0...optionShit.length)
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 240) + offset);
+			var menuItem:FlxSprite = new FlxSprite(0, (i * 140) + offset);
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
@@ -101,6 +101,26 @@ class MainMenuState extends MusicBeatState
 			menuItem.scrollFactor.set(0, scr);
 			menuItem.updateHitbox();
 			//menuItem.screenCenter(X);
+			if(optionShit[i] == 'story_mode')
+			{
+				menuItem.y -= 100;
+				menuItem.x -= 0;
+			}
+			if(optionShit[i] == 'freeplay')
+			{
+				menuItem.y -= 80;
+				menuItem.x -= 0;
+			}
+			if(optionShit[i] == 'credits')
+			{
+				menuItem.y -= 60;
+				menuItem.x -= 0;
+			}
+			if(optionShit[i] == 'options')
+			{
+				menuItem.y -= 40;
+				menuItem.x -= 0;
+			}
 		}
 
 		var psychVer:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
