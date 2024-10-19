@@ -103,27 +103,27 @@ class MainMenuState extends MusicBeatState
 			//menuItem.screenCenter(X);
 			if(optionShit[i] == 'story_mode')
 			{
-				menuItem.y -= 180;
-				menuItem.x -= 0;
-				menuItem.angle = 1;
+				menuItem.y -= 200;
+				menuItem.x += 40;
+				menuItem.angle = 3;
 			}
 			if(optionShit[i] == 'freeplay')
 			{
-				menuItem.y -= 140;
-				menuItem.x -= 0;
-				menuItem.angle = -2;
+				menuItem.y -= 160;
+				menuItem.x -= 20;
+				menuItem.angle = -8;
 			}
 			if(optionShit[i] == 'credits')
 			{
-				menuItem.y -= 120;
-				menuItem.x -= 0;
-				menuItem.angle = 2;
+				menuItem.y -= 140;
+				menuItem.x += 50;
+				menuItem.angle = 10;
 			}
 			if(optionShit[i] == 'options')
 			{
-				menuItem.y -= 100;
-				menuItem.x -= 0;
-				menuItem.angle = -10;
+				menuItem.y -= 120;
+				menuItem.x += 20;
+				menuItem.angle = -14;
 			}
 		}
 
