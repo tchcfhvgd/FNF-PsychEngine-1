@@ -530,7 +530,7 @@ class TitleState extends MusicBeatState
 	{
 		super.beatHit();
 
-		if(!closedState) {
+		if(closedState)
 		{
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
