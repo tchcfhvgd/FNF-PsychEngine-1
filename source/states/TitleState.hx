@@ -211,7 +211,7 @@ class TitleState extends MusicBeatState
 		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
 		logoBl.frames = Paths.getSparrowAtlas('logoWhitty');
 		logoBl.antialiasing = ClientPrefs.data.antialiasing;
-		logoBl.scale.set(0.7,0.7);
+		logoBl.scale.set(0.78,0.78);
 
 		logoBl.animation.addByPrefix('bump', 'LogoWhitty Bump', 24, false);
 		logoBl.animation.addByPrefix('start', 'LogoWhitty Spray', 24, false);
@@ -478,11 +478,6 @@ class TitleState extends MusicBeatState
 			#end
 		}
 
-		if (initialized && pressedEnter && !skippedIntro)
-		{
-			skipIntro();
-		}
-
 		if(swagShader != null)
 		{
 			if(controls.UI_LEFT) swagShader.hue -= elapsed * 0.1;
@@ -609,11 +604,11 @@ class TitleState extends MusicBeatState
 			                gfDance.animation.play('start', true);
 			                }
 
-				case 24:
+				case 23:
 					if(logoBl != null)
 			                logoBl.animation.play('start', true);
 				
-				case 27:
+				case 26:
 				        qqqeb = true;
 	
 					
