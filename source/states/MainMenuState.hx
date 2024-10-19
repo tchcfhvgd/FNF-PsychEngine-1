@@ -116,7 +116,7 @@ class MainMenuState extends MusicBeatState
 			if(optionShit[i] == 'credits')
 			{
 				menuItem.y -= 130;
-				menuItem.x += 180;
+				menuItem.x += 200;
 				menuItem.angle = 10;
 			}
 			if(optionShit[i] == 'options')
@@ -202,7 +202,13 @@ class MainMenuState extends MusicBeatState
 						switch (optionShit[curSelected])
 						{
 							case 'story_mode':
-								MusicBeatState.switchState(new StoryMenuState());
+								PlayState.storyPlaylist = ['lo-fight', 'overhead', 'ballistic'];
+		                                                PlayState.isStoryMode = true;
+								PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase(), PlayState.storyPlaylist[0].toLowerCase());
+								PlayState.storyWeek = 0;
+		                                                PlayState.campaignScore = 0;
+		                                                PlayState.campaignMisses = 0
+								MusicBeatState.switchState(new PlayState());
 							case 'freeplay':
 								MusicBeatState.switchState(new FreeplayState());
 
