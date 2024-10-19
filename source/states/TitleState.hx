@@ -247,8 +247,8 @@ class TitleState extends MusicBeatState
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 				gfDance.frames = Paths.getSparrowAtlas('whittyTitle');
-				gfDance.animation.addByIndices('start', 'Whitty_Memu StartUp', 24, false);
-				gfDance.animation.addByIndices('idle', 'Whitty_Memu Idle', 24, false);
+				gfDance.animation.addByPrefix('start', 'Whitty_Memu StartUp', 24, false);
+				gfDance.animation.addByPrefix('idle', 'Whitty_Memu Idle', 24, false);
 		}
 
 		add(gfDance);
