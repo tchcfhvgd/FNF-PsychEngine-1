@@ -187,7 +187,7 @@ class FreeplayState extends MusicBeatState
 		super.closeSubState();
 		#if mobile
                 removeVirtualPad();
-		addVirtualPad(LEFT_FULL, A_B_C_X_Y);
+		addVirtualPad(LEFT_FULL, A_B_X_Y);
                 #end
 	}
 
@@ -315,13 +315,13 @@ class FreeplayState extends MusicBeatState
 			}
 		}
 
-		if(FlxG.keys.justPressed.CONTROL || MusicBeatState.virtualPad.buttonC.justPressed && !player.playingMusic)
+		if(FlxG.keys.justPressed.CONTROL || MusicBeatState.virtualPad.buttonX.justPressed && !player.playingMusic)
 		{
 			persistentUpdate = false;
 			openSubState(new GameplayChangersSubstate());
 			removeVirtualPad();
 		}
-		else if(FlxG.keys.justPressed.SPACE || MusicBeatState.virtualPad.buttonX.justPressed)
+		else if(FlxG.keys.justPressed.SPACE)
 		{
 			if(instPlaying != curSelected && !player.playingMusic)
 			{
